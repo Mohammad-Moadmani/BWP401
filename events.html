@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>كل الفعاليات</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+        <div class="container">
+            <a class="navbar-brand fw-bold text-primary" href="index.html">دليل الفعاليات</a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navMenu">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">الرئيسية</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="events.html">كل الفعاليات</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">عن الدليل</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">اتصل بنا</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="py-5 bg-light border-bottom">
+        <div class="container text-center">
+            <h2 class="fw-bold text-primary">كل الفعاليات</h2>
+            <p class="text-muted">استكشف جميع فعاليات الجامعة الافتراضية</p>
+        </div>
+    </header>
+
+    <!-- Filters -->
+    <section class="py-4">
+        <div class="container">
+
+            <div class="row g-3">
+
+                <!-- Search -->
+                <div class="col-md-4">
+                    <input type="text" id="searchInput" class="form-control" placeholder="ابحث عن فعالية...">
+                </div>
+
+                <!-- Category filter -->
+                <div class="col-md-4">
+                    <select id="categoryFilter" class="form-select">
+                        <option value="">كل التصنيفات</option>
+                        <option value="music">موسيقى</option>
+                        <option value="sports">رياضة</option>
+                        <option value="culture">ثقافة</option>
+                        <option value="family">عائلي</option>
+                        <option value="technology">تقنية</option>
+                    </select>
+                </div>
+
+                <!-- Date filter -->
+                <div class="col-md-3">
+                    <input type="date" id="dateFilter" class="form-control">
+                </div>
+
+                <!-- Reset -->
+                <div class="col-md-1">
+                    <button id="clearFilters" class="btn btn-secondary w-100">مسح</button>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Events List -->
+    <section class="py-4">
+        <div class="container">
+
+            <div class="row" id="eventsContainer"></div>
+
+            <div id="noEvents" class="text-center text-muted mt-4" style="display:none;">
+                لا توجد فعاليات مطابقة للبحث
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-primary text-white py-4 mt-5">
+        <div class="container text-center">
+            <p class="mb-1">© 2026 دليل فعاليات الجامعة الافتراضية</p>
+            <p class="small">البريد: info@university-events.com</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap + JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- JS -->
+    <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
