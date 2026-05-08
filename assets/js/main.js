@@ -241,6 +241,38 @@ function loadEventDetails() {
         `;
     });
     document.getElementById("eventGallery").innerHTML = galleryHTML;
+    const addToCalendarBtn = document.getElementById("addToCalendarBtn");
+    // add to calendar
+    if (addToCalendarBtn) {
+        const title = event.title;
+        const date = event.date.replace(/-/g, "");
+        const start = date + "T090000";
+        const end = date + "T110000";
+
+        const calendarUrl =
+            `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(title)}&dates=${start}/${end}`;
+
+        addToCalendarBtn.href = calendarUrl;
+    }
+    const shareBtn = document.getElementById("shareBtn");
+
+    // share 
+    if (shareBtn) {
+        shareBtn.addEventListener("click", () => {
+            const shareData = {
+                title: event.title,
+                text: "فعالية مميزة لا تفوتها!",
+                url: window.location.href
+            };
+
+            if (navigator.share) {
+                navigator.share(shareData);
+            } else {
+                alert("المتصفح لا يدعم خاصية المشاركة.");
+            }
+        });
+    }
+
 
     // filter result
     const related = events.filter(e => e.category === event.category && e.id !== id);
